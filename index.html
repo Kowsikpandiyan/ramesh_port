@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramesh G | Full Stack Developer</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+color:#00e5ff;
+font-size:28px;
+font-weight:bold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+padding:100px 10%;
+background:linear-gradient(135deg,#050816,#0f172a,#0c4a6e);
+}
+
+.profile-pic{
+width:260px;
+height:260px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #00e5ff;
+box-shadow:0 0 20px #00e5ff,0 0 40px #00e5ff,0 0 80px #00e5ff;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
+
+.hero-content h1{
+font-size:70px;
+background:linear-gradient(45deg,#00e5ff,#ff00ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-content h3{
+margin-top:10px;
+font-size:30px;
+color:#00e5ff;
+}
+
+.hero-content p{
+margin-top:20px;
+line-height:1.8;
+max-width:600px;
+}
+
+/* BUTTONS */
+.btns{
+margin-top:25px;
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 25px;
+background:#00e5ff;
+color:black;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.btn-outline{
+padding:12px 25px;
+border:1px solid #00e5ff;
+color:white;
+text-decoration:none;
+border-radius:10px;
+}
+
+/* SECTION */
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#00e5ff;
+}
+
+/* 🔥 NEW CARD STYLE (USED FOR ALL BOXES) */
+.card-box{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(0,229,255,0.3);
+box-shadow:0 0 20px rgba(0,229,255,0.15);
+transition:.3s;
+}
+
+.card-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(0,229,255,0.4);
+}
+
+/* SKILLS */
+.skills{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.skill{
+padding:12px 20px;
+border:1px solid #00e5ff;
+border-radius:30px;
+}
+
+/* PROJECTS */
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+border:1px solid rgba(0,229,255,0.2);
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+color:#00e5ff;
+margin-bottom:15px;
+}
+
+.tech{
+margin-top:15px;
+color:#00e5ff;
+font-weight:bold;
+}
+
+/* TIMELINE */
+.timeline{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.timeline-item{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:15px;
+border-left:4px solid #00e5ff;
+}
+
+/* SOCIAL */
+.socials{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.socials a{
+background:#00e5ff;
+padding:12px 20px;
+text-decoration:none;
+color:black;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+}
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:50px;
+}
+
+.profile-pic{
+width:180px;
+height:180px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Ramesh G</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<img src="profile.png" class="profile-pic">
+
+<div class="hero-content">
+
+<h1>Ramesh G</h1>
+<h3 id="typing">Full Stack Developer</h3>
+
+<p>
+Computer Science Engineering student at National Engineering College.
+Passionate about Fullstack Development and building modern web applications.
+</p>
+
+<div class="btns">
+<a href="#projects" class="btn">View Projects</a>
+<a href="#" class="btn-outline">Resume</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="title">About Me</h2>
+
+<div class="card-box">
+<p>
+I am a Computer Science and Engineering student at National Engineering College with a strong passion for software development and problem-solving. I have developed a solid foundation in core programming concepts and modern web technologies through academic learning and hands-on project experience.</p>
+<br>
+<p>
+I specialize in full-stack development using technologies such as Java, Spring Boot, React, Node.js, MongoDB, and MySQL. I enjoy building scalable, efficient, and user-friendly applications that solve real-world problems. I have worked on several academic and personal projects that helped me strengthen my understanding of both frontend and backend development, as well as database design and API integration.</p>
+<br>
+<p>
+
+<p>
+My long-term goal is to become a professional Full Stack Developer and contribute to building impactful, real-world software solutions that improve user experience and business efficiency. I am also eager to learn emerging technologies and continuously grow as a software engineer in a professional environment.
+</p>
+<br>
+Apart from technical skills, I am continuously improving my problem-solving abilities in data structures and algorithms using Java. I also have experience working with RESTful APIs, authentication systems, and basic system design concepts.</p>
+</div>
+
+</section>
+
+<section id="education">
+<h2 class="title">Education</h2>
+
+<div class="card-box">
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Lakshmi Ammal Polytechnic College</h3>
+<p>Diploma in Mechanical Engineering</p>
+</div>
+
+<div class="timeline-item">
+<h3>National Engineering College</h3>
+<p>B.E Computer Science Engineering</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2 class="title">Skills</h2>
+
+<div class="card-box">
+
+<div class="skills">
+<div class="skill">Java</div>
+<div class="skill">Spring Boot</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">React</div>
+<div class="skill">Node.js</div>
+<div class="skill">MongoDB</div>
+<div class="skill">MySQL</div>
+</div>
+
+</div>
+</section>
+
+
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2 class="title">Projects</h2>
+
+<div class="project-grid">
+
+<div class="card">
+<h3>🏥 Prescripto – Hospital Management System</h3>
+
+<p>
+Prescripto is a full-stack healthcare management platform designed to simplify and digitize hospital operations. 
+It provides an efficient system for patients, doctors, and administrators to manage healthcare services in a seamless and organized manner.
+</p>
+<br>
+<p>
+The platform enables patients to book appointments online, view doctor availability, and receive consultation without manual intervention. 
+Doctors can manage their schedules, update patient records, and track appointment history. 
+It also includes an integrated online pharmacy system for ordering medicines and managing prescriptions digitally.
+</p>
+<br>
+<p>
+The system is built with a responsive and user-friendly interface to ensure smooth access across devices. 
+Secure payment integration is implemented to support online transactions for appointments and pharmacy orders.
+</p>
+
+<div class="tech">
+React • Node.js • Express.js • MongoDB • Razorpay • REST APIs • JWT Authentication
+</div>
+</div>
+
+<div class="card">
+<h3>💪 Gym Management System</h3>
+
+<p>
+The Gym Management System is a desktop-based application designed to efficiently manage gym operations and automate daily administrative tasks. 
+It helps gym owners and staff handle member registration, trainer allocation, subscription plans, attendance tracking, and performance reports in a structured manner.
+</p>
+<br>
+<p>
+The system maintains a centralized database to store member details, membership status, payment records, and workout attendance history. 
+It ensures smooth communication between members and trainers while reducing manual work and improving operational efficiency.
+</p>
+<br>
+<p>
+This application also supports generating reports for membership activity, subscription validity, and attendance analysis, helping gym administrators make better decisions.
+</p>
+
+<div class="tech">
+Java • JDBC • MySQL • Swing (Optional GUI) • OOP Concepts
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="certificates">
+<h2 class="title">Certificates</h2>
+
+<div class="project-grid">
+
+<div class="card">
+<h3>CodeSoft Internship</h3>
+<p>Completed internship and worked on web development tasks.</p>
+</div>
+
+<div class="card">
+<h3>AlgoUniversity Camp</h3>
+<p>Graph Theory | Programming.</p>
+</div>
+
+<div class="card">
+<h3>Snowflake Certification</h3>
+<p>SnowPro Associate: Platform.</p>
+</div>
+
+<div class="card">
+<h3>Anveshna 2K6 Hackathonw</h3>
+<p>Smart Engineering | SASI.</p>
+</div>
+
+</div>
+</section>
+
+<!-- EDUCATION -->
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Contact</h2>
+
+<div class="card-box">
+
+<p><b>📞 Phone:</b> 9790233630</p>
+<br>
+<p><b>📧 Email:</b> 2312406@nec.edu.in</p>
+
+</div>
+
+<br>
+
+<div class="socials">
+<a href="https://github.com/">GitHub</a>
+<a href="https://linkedin.com/">LinkedIn</a>
+</div>
+
+</section>
+<footer>
+© 2026 Ramesh G | Full Stack Developer
+</footer>
+
+<script>
+const roles=["Full Stack Developer","Java Developer","React Developer","Backend Developer"];
+let i=0;
+
+setInterval(()=>{
+document.getElementById("typing").innerHTML=roles[i];
+i=(i+1)%roles.length;
+},2000);
+</script>
+
+</body>
+</html>
