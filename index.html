@@ -7,6 +7,49 @@
 
 <style>
 
+/* ================= INTRO SCREEN (ONLY ADDITION) ================= */
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+}
+
+#intro h1{
+font-size:90px;
+letter-spacing:10px;
+color:#00e5ff;
+text-shadow:0 0 20px #00e5ff,0 0 50px #00e5ff;
+animation:glow 2s infinite alternate;
+}
+
+#intro p{
+margin-top:15px;
+font-size:20px;
+color:#aaa;
+letter-spacing:5px;
+}
+
+@keyframes glow{
+from{transform:scale(0.9); opacity:0.6;}
+to{transform:scale(1.1); opacity:1;}
+}
+
+#intro.hide{
+opacity:0;
+visibility:hidden;
+transition:1.2s ease;
+}
+
+/* ================= YOUR ORIGINAL CODE (UNCHANGED) ================= */
+
 *{
 margin:0;
 padding:0;
@@ -68,7 +111,7 @@ height:260px;
 border-radius:50%;
 object-fit:cover;
 border:4px solid #00e5ff;
-box-shadow:0 0 20px #00e5ff,0 0 40px #00e5ff,0 0 80px #00e5ff;
+box-shadow:0 0 15px #00e5ff, 0 0 30px rgba(0,229,255,0.5);
 animation:float 3s ease-in-out infinite;
 }
 
@@ -132,7 +175,7 @@ margin-bottom:50px;
 color:#00e5ff;
 }
 
-/* 🔥 NEW CARD STYLE (USED FOR ALL BOXES) */
+/* CARD STYLE */
 .card-box{
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(10px);
@@ -256,6 +299,12 @@ display:none;
 
 <body>
 
+<!-- ================= INTRO SCREEN ================= -->
+<div id="intro">
+<h1>RAMESH</h1>
+<p>FULL STACK DEVELOPER</p>
+</div>
+
 <nav>
 <div class="logo">Ramesh G</div>
 <ul>
@@ -263,6 +312,7 @@ display:none;
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#education">Education</a></li>
+<li><a href="#certificates">Certificates</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -284,7 +334,7 @@ Passionate about Fullstack Development and building modern web applications.
 
 <div class="btns">
 <a href="#projects" class="btn">View Projects</a>
-<a href="#" class="btn-outline">Resume</a>
+<a href="resume.pdf" class="btn-outline">Resume</a>
 </div>
 
 </div>
@@ -297,22 +347,31 @@ Passionate about Fullstack Development and building modern web applications.
 
 <div class="card-box">
 <p>
-I am a Computer Science and Engineering student at National Engineering College with a strong passion for software development and problem-solving. I have developed a solid foundation in core programming concepts and modern web technologies through academic learning and hands-on project experience.</p>
+I am a Computer Science and Engineering student at National Engineering College with a strong passion for software development and problem-solving. I have developed a solid foundation in core programming concepts and modern web technologies through academic learning and hands-on project experience.
+</p>
+
 <br>
+
 <p>
-I specialize in full-stack development using technologies such as Java, Spring Boot, React, Node.js, MongoDB, and MySQL. I enjoy building scalable, efficient, and user-friendly applications that solve real-world problems. I have worked on several academic and personal projects that helped me strengthen my understanding of both frontend and backend development, as well as database design and API integration.</p>
+I specialize in full-stack development using technologies such as Java, Spring Boot, React, Node.js, MongoDB, and MySQL. I enjoy building scalable, efficient, and user-friendly applications that solve real-world problems. I have worked on several academic and personal projects that helped me strengthen my understanding of both frontend and backend development, as well as database design and API integration.
+</p>
+
 <br>
-<p>
 
 <p>
 My long-term goal is to become a professional Full Stack Developer and contribute to building impactful, real-world software solutions that improve user experience and business efficiency. I am also eager to learn emerging technologies and continuously grow as a software engineer in a professional environment.
 </p>
+
 <br>
-Apart from technical skills, I am continuously improving my problem-solving abilities in data structures and algorithms using Java. I also have experience working with RESTful APIs, authentication systems, and basic system design concepts.</p>
+
+<p>
+Apart from technical skills, I am continuously improving my problem-solving abilities in data structures and algorithms using Java. I also have experience working with RESTful APIs, authentication systems, and basic system design concepts.
+</p>
 </div>
 
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
 <h2 class="title">Education</h2>
 
@@ -356,8 +415,6 @@ Apart from technical skills, I am continuously improving my problem-solving abil
 </div>
 </section>
 
-
-
 <!-- PROJECTS -->
 <section id="projects">
 <h2 class="title">Projects</h2>
@@ -371,13 +428,17 @@ Apart from technical skills, I am continuously improving my problem-solving abil
 Prescripto is a full-stack healthcare management platform designed to simplify and digitize hospital operations. 
 It provides an efficient system for patients, doctors, and administrators to manage healthcare services in a seamless and organized manner.
 </p>
+
 <br>
+
 <p>
 The platform enables patients to book appointments online, view doctor availability, and receive consultation without manual intervention. 
 Doctors can manage their schedules, update patient records, and track appointment history. 
 It also includes an integrated online pharmacy system for ordering medicines and managing prescriptions digitally.
 </p>
+
 <br>
+
 <p>
 The system is built with a responsive and user-friendly interface to ensure smooth access across devices. 
 Secure payment integration is implemented to support online transactions for appointments and pharmacy orders.
@@ -395,12 +456,16 @@ React • Node.js • Express.js • MongoDB • Razorpay • REST APIs • JWT 
 The Gym Management System is a desktop-based application designed to efficiently manage gym operations and automate daily administrative tasks. 
 It helps gym owners and staff handle member registration, trainer allocation, subscription plans, attendance tracking, and performance reports in a structured manner.
 </p>
+
 <br>
+
 <p>
 The system maintains a centralized database to store member details, membership status, payment records, and workout attendance history. 
 It ensures smooth communication between members and trainers while reducing manual work and improving operational efficiency.
 </p>
+
 <br>
+
 <p>
 This application also supports generating reports for membership activity, subscription validity, and attendance analysis, helping gym administrators make better decisions.
 </p>
@@ -413,6 +478,7 @@ Java • JDBC • MySQL • Swing (Optional GUI) • OOP Concepts
 </div>
 </section>
 
+<!-- CERTIFICATES -->
 <section id="certificates">
 <h2 class="title">Certificates</h2>
 
@@ -441,9 +507,6 @@ Java • JDBC • MySQL • Swing (Optional GUI) • OOP Concepts
 </div>
 </section>
 
-<!-- EDUCATION -->
-
-<!-- CONTACT -->
 <!-- CONTACT -->
 <section id="contact">
 <h2 class="title">Contact</h2>
@@ -459,23 +522,30 @@ Java • JDBC • MySQL • Swing (Optional GUI) • OOP Concepts
 <br>
 
 <div class="socials">
-<a href="https://github.com/">GitHub</a>
-<a href="https://linkedin.com/">LinkedIn</a>
+<a href="https://github.com/Ramesh-G9697D">GitHub</a>
+<a href="https://www.linkedin.com/in/ramesh-g-842183343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
 </div>
 
 </section>
+
 <footer>
 © 2026 Ramesh G | Full Stack Developer
 </footer>
 
 <script>
+
+setTimeout(()=>{
+document.getElementById("intro").classList.add("hide");
+},3000);
+
 const roles=["Full Stack Developer","Java Developer","React Developer","Backend Developer"];
 let i=0;
 
 setInterval(()=>{
-document.getElementById("typing").innerHTML=roles[i];
+document.getElementById("typing").innerText=roles[i];
 i=(i+1)%roles.length;
 },2000);
+
 </script>
 
 </body>
